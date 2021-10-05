@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <div class="body-box">
+        <h2>Mon compte</h2>
+        <form>
+            <div class="segment">
+                <h3>Mettre à jour mes informations :</h3>
+            </div>
+            <label>
+                <input type="text" placeholder="Prénom"/>
+            </label>
+            <label>
+                <input type="text" placeholder="Nom"/>
+            </label>
+            <label>
+                <input type="text" placeholder="Adresse email"/>
+            </label>
+            <label>
+                <input type="text" placeholder="Téléphone"/>
+            </label>
+            <label>
+                Selectionnez votre handicap <br>
+                (dans le cas de plurihandicap ou polyhandicap, veuillez cochez ceux correspondants) :
+                <select id="select-handicap">
+                    <optgroup label="Handicap moteur">
+                        <option value="paraplégie">Paraplégie</option>
+                        <option value="tétraplégie">Tétraplégie</option>
+                        <option value="hémiplégie">Hémiplégie</option>
+                        <option value="problème-physique">Problème physique</option>
+                    </optgroup>
+                    <optgroup label="Handicap sensoriel">
+                        <option value="cécité">Cécité</option>
+                        <option value="surdité">Surdité</option>
+                        <option value="surdicécité">Surdicécité</option>
+                        <option value="malvoyance">Malvoyance</option>
+                        <option value="mutisme">Mutisme</option>
+                    </optgroup>
+                    <optgroup label="Autres">
+                        <option value="handicap-mental">Handicap mental</option>
+                        <option value="handicap-cognitif">Handicap cognitif</option>
+                        <option value="handicap-psychique">Handicap psychique</option>
+                        <option value="maladie-invalidante">Maladie invalidante</option>
+                        <span class="infos-maladie-invalidante">infos</span>
+                    </optgroup>
+                </select>
+            </label>
+
+            <div class="segment">
+                <button class="unit" type="button">
+                    <i class="icon ion-md-arrow-back"></i>
+                </button>
+                <button class="unit" type="button">
+                    <i class="icon ion-md-bookmark"></i>
+                </button>
+                <button class="unit" type="button">
+                    <i class="icon ion-md-settings"></i>
+                </button>
+            </div>
+            <div class="input-group">
+                <label>
+                    <input type="text" placeholder="Email Address"/>
+                </label>
+                <button class="unit" type="button">
+                    <i class="icon ion-md-search"></i>
+                </button>
+            </div>
+            <button class="btn-form" type="submit" >
+                <i class="icon ion-md-lock"></i>
+                Modifier
+            </button>
+        </form>
+    </div>
+{% endblock %}
