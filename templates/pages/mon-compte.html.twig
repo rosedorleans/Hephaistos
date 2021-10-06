@@ -13,92 +13,103 @@
 
 {% block body %}
 
-    <div class="body-box">
-        <h2>Mon compte</h2>
-        <form>
-            <div class="segment">
-                <h3>Mettre à jour mes informations :</h3>
-            </div>
-            <div class="form-flex">
-                <div class="form-box">
-                    <div class="segment">
-                        <h4>Mes informations :</h4>
-                    </div>
-                    <label>
-                        Prénom
-                        <input type="text" {#value="{{ app.user.firstname }}"#}/>
-                    </label>
-                    <label>
-                        Nom
-                        <input type="text" {#value="{{ app.user.name }}"#}/>
-                    </label>
-                    <label>
-                        Adresse email
-                        <input type="text" {#value="{{ app.user.mail }}"#}/>
-                    </label>
-                    <label>
-                        Téléphone
-                        <input type="text" {#value="{{ app.user.phone }}"#}/>
-                    </label>
+    <h2>Mon compte</h2>
+    <form class="shadow-box">
+        <div class="segment">
+            <h3>Mettre à jour mes informations :</h3>
+        </div>
+        <div class="form-flex">
+            <div class="form-box">
+                <div class="segment">
+                    <h4>Mes informations :</h4>
                 </div>
-
-                <div class="form-box">
-                    <div class="segment">
-                        <h4>Contact en cas d'urgence :</h4>
-                    </div>
-                    <label>
-                        Prénom
-                        <input type="text" {#value="{{ contactUrgence.firstname }}"#}/>
-                    </label>
-                    <label>
-                        Nom
-                        <input type="text" {#value="{{ contactUrgence.name }}"#}/>
-                    </label>
-                    <label>
-                        Adresse email
-                        <input type="text" {#value="{{ contactUrgence.mail }}"#}/>
-                    </label>
-                    <label>
-                        Téléphone
-                        <input type="text" {#value="{{ contactUrgence.phone }}"#}/>
-                    </label>
-                </div>
-
-                <div class="form-box">
-                    <div class="segment">
-                        <h4>Handicap :</h4>
-                    </div>
-                    <label>
-                        Selectionnez la catégorie de votre handicap
-                        <select id="select-handicap">
-                            <option value="0">-- Choisissez une catégorie --</option>
-
-                            {% for category in allCategories %}
-                                <option value="{{ category.id }}">{{ category.name }}</option>
-                            {% endfor %}
-
-                        </select>
-                    </label>
-                    <label for="numCategoryCPAM">
-                        Numéro de catégorie CPAM (1, 2 ou 3)
-                        <input type="number" min="0" max="3">
-                    </label>
-                    <label for="TIP">
-                        Taux d'incapacité permanente (en %)
-                        <input type="number" min="0" max="3">
-                    </label>
-                    <label for="numAggir">
-                        Numéro de grille Aggir (entre 1 et 6)
-                        <input type="number" min="0" max="3">
-                    </label>
-                </div>
+                <label>
+                    Prénom
+                    <input type="text" name="prenom"/>
+                </label>
+                <label>
+                    Nom
+                    <input type="text" name="nom"/>
+                </label>
+                <label>
+                    Adresse email
+                    <input type="text" name="email"/>
+                </label>
+                <label>
+                    Téléphone
+                    <input type="text" name="telephone"/>
+                </label>
             </div>
 
+            <div class="form-box">
+                <div class="segment">
+                    <h4>Contact en cas d'urgence :</h4>
+                </div>
+                <label>
+                    Prénom
+                    <input type="text" name="contact_prenom"/>
+                </label>
+                <label>
+                    Nom
+                    <input type="text" name="contact_nom"/>
+                </label>
+                <label>
+                    Adresse email
+                    <input type="text" name="contact_email"/>
+                </label>
+                <label>
+                    Téléphone
+                    <input type="text" name="contact_telephone"/>
+                </label>
+            </div>
 
-            <button class="btn-form" type="submit" >
-                <i class="icon ion-md-lock"></i>
-                Modifier
-            </button>
-        </form>
-    </div>
+            <div class="form-box">
+                <div class="segment">
+                    <h4>Handicap :</h4>
+                </div>
+                <label>
+                    Selectionnez la catégorie de votre handicap
+                    <select id="select-handicap" name="cat_han">
+                        <option value="">-- Choisissez une catégorie --</option>
+                        {% for category in allCategories %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+
+                    </select>
+                </label>
+                <label for="type_han">
+                    Selectionnez le type de handicap
+                    <select id="select-handicap" name="type_han">
+                        <option value="">-- Choisissez une catégorie --</option>
+                        {% for type in allTypes %}
+                            <option value="{{ type.id }}">{{ type.name }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <label for="numCategoryCPAM">
+                    Numéro de catégorie CPAM (1, 2 ou 3)
+                    <input type="number" min="1" max="3" name="han_cat_cpam">
+                </label>
+                <label for="TIP">
+                    Taux d'incapacité permanente (en %)
+                    <input type="number" min="1" max="100" name="tx_incap_perm">
+                </label>
+                <label for="numAggir">
+                    Numéro de grille Aggir (entre 1 et 6)
+                    <input type="number" min="1" max="6" name="num_aggir">
+                </label>
+                <label>
+                    Informations complémentaires
+                    <textarea rows="5" cols="60" name="infos_comp"></textarea>
+                </label>
+            </div>
+        </div>
+
+
+        <button class="btn-form" type="submit" >
+            <i class="icon ion-md-lock"></i>
+            Modifier
+        </button>
+    </form>
+
 {% endblock %}

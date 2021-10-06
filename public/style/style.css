@@ -93,6 +93,32 @@ nav {
 
 .accessibilite {
     align-self: center;
+    color: #61677c;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 8px;
+    line-height: 0;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 19.2px;
+}
+
+.accessibilite img {
+    padding: 3px;
+}
+
+.accessibilite:hover {
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+.accessibilite:active {
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
 
 
@@ -284,7 +310,6 @@ nav {
 }
 
 label[for="ham-menu"] {
-    display: block;
     position: absolute;
     top: 24px;
     left: 20px;
@@ -292,9 +317,26 @@ label[for="ham-menu"] {
     width: 60px;
     height: 60px;
     background-color: transparent;
-    border-radius: 15px;
     border: 3px solid var(--hepha-blue2);
     cursor: pointer;
+    align-self: center;
+    box-shadow: 5px 5px 20px #00000033;
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    border-radius: 8px;
+    line-height: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+}
+
+label[for="ham-menu"]:hover {
+    box-shadow: 5px 5px 20px #0000001D;
+}
+
+label[for="ham-menu"]:active {
+    box-shadow: 5px 5px 20px #00000033;
 }
 
 .ham-menu {
@@ -339,21 +381,25 @@ label[for="ham-menu"] {
 
 .active {
     color: var(--hepha-blue2-hover) !important;
-    cursor: default !important;}
+    cursor: default !important;
+}
 
 #ham-menu:checked + label {
     background-color: transparent;
     border-color: var(--hepha-blue2);
+    box-shadow: 0 0 20px 0 #00000033;
+    transition: 0.1s;
 }
+
+#ham-menu ~ label {
+    transition: 0.1s;
+}
+
 #ham-menu:checked ~ div.ham-menu {
     transform: translate(0px);
     visibility: visible;
 }
-#ham-menu:checked ~ div.full-page-green {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
+
 [for="ham-menu"] > div {
     width: 100%;
     height: 100%;
@@ -362,6 +408,7 @@ label[for="ham-menu"] {
     align-content: center;
     align-items: center;
 }
+
 .menu-line {
     display: block;
     width: 17px;
@@ -373,6 +420,7 @@ label[for="ham-menu"] {
     transition: 500ms;
     transform-origin: right center;
 }
+
 [for="ham-menu"] > div > span:nth-child(4),
 [for="ham-menu"] > div > span:nth-child(5),
 [for="ham-menu"] > div > span:nth-child(6) {
@@ -382,22 +430,28 @@ label[for="ham-menu"] {
     border-bottom-right-radius: 2px;
     transform-origin: left center;
 }
+
 #ham-menu:checked + label span {
     background-color: var(--hepha-blue2);
 }
+
 #ham-menu:checked + label span:nth-child(2),
 #ham-menu:checked + label span:nth-child(5) {
     transform: scale(0);
 }
+
 #ham-menu:checked + label span:nth-child(1) {
     transform: translateY(17px) rotate(45deg);
 }
+
 #ham-menu:checked + label span:nth-child(4) {
     transform: translateY(17px) rotate(-45deg);
 }
+
 #ham-menu:checked + label span:nth-child(3) {
     transform: translateY(-17px) rotate(-45deg);
 }
+
 #ham-menu:checked + label span:nth-child(6) {
     transform: translateY(-17px) rotate(45deg);
 }
@@ -420,8 +474,8 @@ h1, h2, h3 {
 }
 
 .body-box {
-    height: 600px;
-    margin: 0;
+    height: 100%;
+    margin: 0 0 60px;
 }
 
 .body-box > h2 {
@@ -441,7 +495,8 @@ div, p {
     text-shadow: 1px 1px 1px #fff;
 }
 
-form {
+form,
+.map {
     padding: 16px;
     width: 70%;
     margin: 0 auto;
@@ -464,7 +519,8 @@ form {
 
 button,
 input,
-select {
+select,
+textarea {
     border: 0;
     outline: 0;
     font-size: 16px;
@@ -481,7 +537,8 @@ label {
 }
 
 input,
-select {
+select,
+textarea {
     margin-right: 8px;
     box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
     width: 100%;
@@ -491,17 +548,15 @@ select {
     -webkit-appearance: none;
 }
 
+
 input:focus,
 select:focus {
     box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
 
 button {
-    color: #61677c;
-    box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    font-weight: 600;
+    box-shadow: 0 0 20px 0 #0000007a;
+    transition: 0.1s;
 }
 
 button:hover {
@@ -510,26 +565,6 @@ button:hover {
 
 button:active {
     box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
-}
-
-button .icon {
-    margin-right: 8px;
-}
-
-button.unit {
-    border-radius: 8px;
-    line-height: 0;
-    width: 48px;
-    height: 48px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 8px;
-    font-size: 19.2px;
-}
-
-button.unit .icon {
-    margin-right: 0;
 }
 
 button.btn-form {
@@ -576,7 +611,7 @@ button.btn-form:hover {
 /*CARTE PAGE D'ACCUEIL*/
 
 .map-filters {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -625,7 +660,7 @@ button.btn-form:hover {
 /*FOOTER*/
 
 footer {
-    height: 300px;
+    height: 250px;
     width: 100%;
     background-color: var(--hepha-blue);
 }
