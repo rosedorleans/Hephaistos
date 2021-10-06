@@ -512,6 +512,26 @@ form,
     width: 30%;
 }
 
+.form-pers {
+    justify-content: center;
+}
+
+.form-margin {
+    margin: 0 auto;
+}
+
+.form-box-handi {
+    width: 80%;
+}
+
+#form-handi1 {
+    width: 40%;
+}
+
+#form-handi2 {
+    width: 60%;
+}
+
 .segment {
     padding: 32px 0;
     text-align: center;
@@ -530,10 +550,22 @@ textarea {
     text-shadow: 1px 1px 0 #fff;
 }
 
+textarea {
+    min-width: 470px;
+    max-width: 470px;
+    min-height: 100px;
+    max-height: 300px;
+    border-radius: 10px !important;
+}
+
 label {
     display: block;
     margin-bottom: 24px;
     width: 100%;
+}
+
+.required {
+    color: #ff0000;
 }
 
 input,
@@ -542,12 +574,20 @@ textarea {
     margin-right: 8px;
     box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
     width: 100%;
+    margin-top: 10px;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
     appearance: none;
     -webkit-appearance: none;
 }
 
+.input-num {
+    width: 35% !important;
+}
+
+.input-select {
+    width: 50% !important;
+}
 
 input:focus,
 select:focus {
@@ -570,7 +610,7 @@ button:active {
 button.btn-form {
     display: block;
     width: 200px;
-    margin: 0 auto;
+    margin: 40px auto 20px;
     color: #FFF;
     background-color: var(--hepha-blue2);
     text-shadow: none;
