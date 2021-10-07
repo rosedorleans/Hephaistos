@@ -13,7 +13,7 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        <nav>
+        <nav class="flex">
             <div>
                 <input type="checkbox" id="ham-menu">
                 <label for="ham-menu" class="unit">
@@ -26,7 +26,7 @@
                         <span class="menu-line"></span>
                     </div>
                 </label>
-                <div class="ham-menu">
+                <div class="ham-menu flex">
                     <ul class="centre-text bold-text">
 
                         {% block menu %}{% endblock %}
@@ -52,18 +52,58 @@
         </div>
 
         <footer>
-
+            <div class="footer-box flex">
+                <div class="menu-footer">
+                    <h3>Navigation :</h3>
+                    <ul>
+                        <li><a href="{{ path('index') }}">Carte</a></li>
+                        <li><a href="{{ path('mon-compte') }}">Mon Compte</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="logo-partenaires">
+                    <h3>Partenaires :</h3>
+                    <div class="flex">
+                        <a href="https://www.tan.fr/fr/proxitan" target="_blank">
+                            <img src="{{ asset('img/tan-logo.jpg') }}" alt="logo tan">
+                        </a>
+                        <a href="https://aleop.paysdelaloire.fr/" target="_blank">
+                            <img src="{{ asset('img/aleop-logo.png') }}" alt="logo aleop">
+                        </a>
+                        <a href="https://www.st2s.fr/" target="_blank">
+                            <img src="{{ asset('img/st2s-logo.png') }}" alt="logo st2s">
+                        </a>
+                        <a href="https://www.bicloo.nantesmetropole.fr/fr/home" target="_blank">
+                            <img src="{{ asset('img/bicloo-logo.png') }}" alt="logo bicloo">
+                        </a>
+                    </div>
+                    <div class="flex">
+                        <a href="https://www.uber.com/fr/fr/ride/uberwav/" target="_blank">
+                            <img src="{{ asset('img/uberwav-logo.png') }}" alt="logo uber wav">
+                        </a>
+                        <a href="https://proxicab.fr/" target="_blank">
+                            <img src="{{ asset('img/proxicab-logo.png') }}" alt="logo proxicab" class="square-logo">
+                        </a>
+                        <a href="https://www.ulysse-transport.fr/" target="_blank">
+                            <img src="{{ asset('img/ulysse-logo.jpg') }}" alt="logo ulysse" class="square-logo">
+                        </a>
+                        <a href="https://www.titi-floris.fr/" target="_blank">
+                            <img src="{{ asset('img/titifloris-logo.png') }}" alt="logo titi floris">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </footer>
 
 
 {#      MODAL ACCESSIBILITE#}
 
-        <div id="accessibilite-modal" class="modal">
+        <div id="accessibilite-modal" class="modal flex">
             <div class="modal-content">
                 <h2>Accessibilité</h2>
                 <div>
-                    <div class="switch-box couleur-theme-box">
-                        <div class="switch-holder">
+                    <div class="switch-box couleur-theme-box flex">
+                        <div class="switch-holder flex">
                             <div class="switch-toggle">
                                 <input type="checkbox" id="couleur-theme">
                                 <label for="couleur-theme"></label>
@@ -71,8 +111,8 @@
                         </div>
                         <p>Couleur du thème</p>
                     </div>
-                    <div class="switch-box taille-police-box">
-                        <div class="switch-holder">
+                    <div class="switch-box taille-police-box flex">
+                        <div class="switch-holder flex">
                             <div class="switch-toggle">
                                 <input type="checkbox" id="taille-police">
                                 <label for="taille-police"></label>
@@ -80,7 +120,7 @@
                         </div>
                         <p>Taille de la police</p>
                     </div>
-                    <div class="switch-box commande-clavier-box">
+                    <div class="switch-box commande-clavier-box flex">
                         <div class="switch-holder">
                             <div class="switch-toggle">
                                 <input type="checkbox" id="commande-clavier">

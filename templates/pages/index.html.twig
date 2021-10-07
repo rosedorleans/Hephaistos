@@ -22,7 +22,8 @@
         </div>
 
         <div class="map-filters">
-            <div class="map-location">
+            <h2>Rechercher un itinéraire :</h2>
+            <div class="map-location flex">
                 <div class="locations-option">
                     <label for="origin">Lieu de départ</label>
                     <input type="text" id="origin" name="way_start" class="way_points" placeholder="ex : 5 rue du Calvaire" value="">
@@ -30,6 +31,29 @@
                 <div class="locations-option">
                     <label for="destination">Lieu d'arrivée</label>
                     <input type="text" id="destination" name="way_end" class="way_points" placeholder="ex : 78 rue Paul Bellamy" value="">
+                </div>
+            </div>
+            <h3>Moyens de transport :</h3>
+            <div class="map-transportation flex">
+                <div class="map-transportation-box">
+                    <div class="icon-car"></div>
+                    <p>Covoiturage</p>
+                </div>
+                <div class="map-transportation-box">
+                    <div class="icon-bus"></div>
+                    <p>Bus</p>
+                </div>
+                <div class="map-transportation-box">
+                    <div class="icon-bike"></div>
+                    <p>Vélo</p>
+                </div>
+                <div class="map-transportation-box">
+                    <div class="icon-taxi"></div>
+                    <p>Taxi</p>
+                </div>
+                <div class="map-transportation-box">
+                    <div class="icon-train"></div>
+                    <p>Train</p>
                 </div>
             </div>
             <div class="btn-draw-box">
@@ -40,6 +64,15 @@
         <br>
         <br>
         <div id="map-layer"></div>
+{#        <iframe src="https://data.paysdelaloire.fr/explore/embed/dataset/234400034_lignes-regulieres-de-transports-regionaux-arrets/custom/?&static=false&datasetcard=false" width="400" height="300" frameborder="0"></iframe>#}
+        <div class="map-sncf">
+            <iframe src="https://data.sncf.com/explore/embed/dataset/liste-des-gares/map/?location=5,45.34684,-0.04395&basemap=jawg.transports&static=false&datasetcard=false&scrollWheelZoom=false"
+                    width="1000"
+                    height="600">
+            </iframe>
+        </div>
+
+
     </div>
 
 
