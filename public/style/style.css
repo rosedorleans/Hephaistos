@@ -497,6 +497,12 @@ div, p {
     text-shadow: 1px 1px 1px #fff;
 }
 
+
+.infos-compte {
+    text-align: center;
+}
+
+
 form,
 .map {
     padding: 16px;
